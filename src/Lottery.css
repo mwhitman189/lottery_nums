@@ -19,6 +19,24 @@
     align-items: center;
 }
 
+.Lottery__container button {
+    color: #fff;
+    border: none;
+    background-color: purple;
+    border-radius: 8px;
+    position: relative;
+    width: 150px;
+    height: 30px;
+    top: 60px;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+         box-shadow: 0 8px 6px -6px black;
+}
+
+.Lottery__container button:hover {
+    cursor: pointer;
+}
+
 .Lottery__nums {
     display: flex;
     flex-flow: row;
