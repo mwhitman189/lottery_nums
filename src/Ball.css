@@ -1,10 +1,29 @@
 .Ball {
-    background-color: orange;
+    display: block;
+    background: radial-gradient(circle at 10px 10px, #ffb039, #bb6a01);
+    border-radius: 50%;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
     margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.Ball__shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+    transform: rotateX(90deg) translateZ(-20px);
+    z-index: -1;
+}
+
+.Ball__stage {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin: 5px;
+    perspective: 120px;
+    perspective-origin: 50% 50%;
 }

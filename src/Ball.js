@@ -5,8 +5,10 @@ import './Ball.css'
 class Ball extends Component {
     render () {
         return (
-            <div className="Ball">
-                <p>{this.props.num}</p>
+            <div className="Ball__stage">
+                <figure className="Ball">
+                    <p>{this.props.num}</p><span className="Ball__shadow"></span>
+                </figure>
             </div>
         )
     }

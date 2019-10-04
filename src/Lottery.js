@@ -18,27 +18,29 @@ class Lottery extends Component {
         maxNum: 99,
     }
 
-    getRandom() {
-        return Math.floor(Math.random() * this.props.maxNum)
+    generateNums() {
+        this.setState(curState => ({
+            nums: curState.nums.map(
+                n => Math.floor(Math.random() * this.props.maxNum) + 1
+            )
+        }))
     }
 
     handleClick() {
-        let newArray = []
-        const newNums = this.state.nums.map(num => {
-            newArray.push(this.getRandom())
-        })
-        this.setState({nums: newArray})
+        this.generateNums()
     }
 
     render () {
         return (
             <div className="Lottery">
-                <div>
-                    <h2>{this.props.title}</h2>
-                    <div className="Lottery__nums">
-                        {this.state.nums.map(n => <Ball num={n} />)}
+                <div className="Lottery__container__border">
+                    <div className="Lottery__container">
+                        <h2>{this.props.title}</h2>
+                        <div className="Lottery__nums">
+                            {this.state.nums.map(n => <Ball num={n} />)}
+                        </div>
+                        <button onClick={this.handleClick}>Show me a winner</button>
                     </div>
-                    <button onClick={this.handleClick}>Show me a winner</button>
                 </div>
             </div>
         )
